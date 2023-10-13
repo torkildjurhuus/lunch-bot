@@ -12,10 +12,10 @@ const app = new App({
 app.command('/lunch-all', async ({ ack, say }) => {
     await ack();
     const fkMenu = await scrapeFkMenu();
-    await say(fkMenu ? `:FK:\n${fkMenu}` : ':FK: No information available*');
+    await say(fkMenu ? `:FK: *Føroya Keypsamtøka* \n${fkMenu}` : ':FK: No information available*');
     await ack();
     const miklagardurMenu = await scrapeMiklagardurMenu();
-    await say(miklagardurMenu ? `:miklagardur:\n${miklagardurMenu}` : ':miklagardur: No information available*');
+    await say(miklagardurMenu ? `:miklagardur: *Miklagarður* \n${miklagardurMenu}` : ':miklagardur: No information available*');
     await ack();
     const siloMenu = await scrapeSiloMenu();
     await say(siloMenu ? `:silo:\n${siloMenu}` : ':silo: No information available*');
